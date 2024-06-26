@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('distances', function (Blueprint $table) {
             $table->id();
+            $table->string('line_name');
             $table->json('points');
+            $table->json('correction')->nullable();
             $table->decimal('distance');
             $table->json('geometry');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

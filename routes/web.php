@@ -11,3 +11,7 @@ Route::get('/', function () {
 
 //show distance blade
 Route::get('/showdistance/{id}', [DistanceController::class, 'showDistance']);
+Route::get('/showMap', [DistanceController::class, 'showMap']);
+
+
+Route::get("/getDistance/{id}", [DistanceController::class, "GetDistance"]);

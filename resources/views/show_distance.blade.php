@@ -30,21 +30,15 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
         /// add Starting point (green)
-        var markerStart = L.marker([points[0][1], points[0][0]], {
-                color: 'green'
-            }).addTo(map)
+        var markerStart = L.marker([points[0][1], points[0][0]]).addTo(map)
             .bindPopup('Starting point').openPopup();
         /// add End point (red)
-        var markerEnd = L.marker([points[points.length - 1][1], points[points.length - 1][0]], {
-                color: 'red'
-            }).addTo(map)
+        var markerEnd = L.marker([points[points.length - 1][1], points[points.length - 1][0]]).addTo(map)
             .bindPopup('End point').openPopup();
 
         /// add middle points (blue)
         for (var i = 1; i < points.length - 1; i++) {
-            L.marker([points[i][1], points[i][0]], {
-                color: 'blue'
-            }).addTo(map)
+            L.marker([points[i][1], points[i][0]]).addTo(map)
         }
         @php
             $geometry = json_decode($distance->geometry);
